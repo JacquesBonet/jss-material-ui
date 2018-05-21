@@ -30,7 +30,8 @@ So I decided to develop a library with the folowing objective:
 ## without props
 
 
-`import style from 'styled'
+```js
+import style from 'styled'
 
 // a container style
 const Root = style(Paper)({
@@ -47,7 +48,7 @@ const Root = style(Paper)({
 
 ## with props
 
-`
+```js
 import style from 'styled'
 import TableCell from '@material-ui/core/TableCell'
 
@@ -79,7 +80,7 @@ If a child B of a component A has for className :
 
 Its possible to write that:
 
-`
+```js
 const SA = style(A)((theme, {calories}) => ({
   current: {
     ...
