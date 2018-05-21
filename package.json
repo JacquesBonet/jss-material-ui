@@ -16,6 +16,7 @@
     "test:unit": "jest",
     "lint": "standard",
     "prepublish": "babel src -d lib",
+    "release": "release-it",
     "storybook": "start-storybook -p 6006",
     "deploy-storybook": "build-storybook -o storybook && gh-pages -d storybook && rm -r storybook"
   },
@@ -55,7 +56,8 @@
     "jest": "^21.2.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-test-renderer": "^16.2.0"
+    "react-test-renderer": "^16.2.0",
+    "release-it": "^7.4.5"
   },
   "peerDependencies": {
     "@material-ui/core": "^1.0.0",
