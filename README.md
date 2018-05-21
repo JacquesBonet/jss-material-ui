@@ -91,6 +91,7 @@ const SA = style(A)((theme, {calories}) => ({
   }
 }))
 `
+The style specified in the classB object will be applied to B class component.
 
 
 ## more samples
