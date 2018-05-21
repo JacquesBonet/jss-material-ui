@@ -46,6 +46,9 @@ const Root = style(Paper)({
 <Container />
 ```
 
+The attribute current designate the style which will be applied to the current component. Here its the component paper
+
+
 ## with props
 
 ```js
@@ -112,3 +115,5 @@ Check ./stories directory for complete sample files.
 
 New samples files will arrive soon.
 Keep in mind the styling system is compatible with material-ui styling
+
+New samples will come soon.
