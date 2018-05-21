@@ -3,12 +3,12 @@ import style from '../src/styled'
 
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
-import TableHead from '@material-ui/core/TableHead'
+import _TableCell from '@material-ui/core/TableCell'
+import _TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
-import Paper from '@material-ui/core/Paper'
+import _Paper from '@material-ui/core/Paper'
 
-const ContainerRoot = style(Paper)({
+const ContainerRoot = style(_Paper)({
   containerRoot: {
     width: '100%',
     marginTop: 3,
@@ -16,20 +16,20 @@ const ContainerRoot = style(Paper)({
   }
 })
 
-const STableHead = style(TableHead)((theme, props) => ({
+const TableHead = style(_TableHead)((theme, props) => ({
   tableHead: {
     width: '100%'
   },
 }))
 
-const STableCell = style(TableCell)((theme, {calories}) => ({
+const TableCell = style(_TableCell)((theme, {calories}) => ({
   tableCell: {
     fontWeight: calories > 300 ? 700 : undefined,
     backgroundColor: calories > 300 ? '#ff0000' : calories < 160 ? '#00FF00' : undefined
   }
 }))
 
-const STableHeadCell = style(TableCell)({
+const TableHeadCell = style(_TableCell)({
   tableHeadCell: {
     fontWeight: 700
   }
@@ -54,26 +54,26 @@ const SimpleTable = (props) => {
   return (
     <ContainerRoot>
       <Table>
-        <STableHead>
+        <TableHead>
           <TableRow>
-            <STableHeadCell>Dessert (100g serving)</STableHeadCell>
-            <STableHeadCell numeric>Calories</STableHeadCell>
-            <STableHeadCell numeric>Fat (g)</STableHeadCell>
-            <STableHeadCell numeric>Carbs (g)</STableHeadCell>
-            <STableHeadCell numeric>Protein (g)</STableHeadCell>
+            <TableHeadCell>Dessert (100g serving)</TableHeadCell>
+            <TableHeadCell numeric>Calories</TableHeadCell>
+            <TableHeadCell numeric>Fat (g)</TableHeadCell>
+            <TableHeadCell numeric>Carbs (g)</TableHeadCell>
+            <TableHeadCell numeric>Protein (g)</TableHeadCell>
           </TableRow>
-        </STableHead>
+        </TableHead>
         <TableBody>
           {data.map(n => {
             return (
               <TableRow key={n.id}>
-                <STableCell component='th' scope='row'>
+                <TableCell component='th' scope='row'>
                   {n.name}
-                </STableCell>
-                <STableCell calories={n.calories} numeric>{n.calories}</STableCell>
-                <STableCell numeric>{n.fat}</STableCell>
-                <STableCell numeric>{n.carbs}</STableCell>
-                <STableCell numeric>{n.protein}</STableCell>
+                </TableCell>
+                <TableCell calories={n.calories} numeric>{n.calories}</TableCell>
+                <TableCell numeric>{n.fat}</TableCell>
+                <TableCell numeric>{n.carbs}</TableCell>
+                <TableCell numeric>{n.protein}</TableCell>
               </TableRow>
             )
           })}
