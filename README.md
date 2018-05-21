@@ -29,7 +29,8 @@ So I decided to develop a library with the folowing objective:
 
 ## without props
 
-`import style from 'styled'
+`
+import style from 'styled'
 
 // a container style
 const Root = style(Paper)({
@@ -42,6 +43,7 @@ const Root = style(Paper)({
 
 // container use
 <Container />
+`
 
 ## with props
 
@@ -75,10 +77,11 @@ If a child B of a component A has for className :
 <A>
    <B className={classes.classB} />
 </A>
- `
+`
 
 Its possible to write that:
 
+`
 const SA = style(A)((theme, {calories}) => ({
   current: {
     ...
@@ -87,6 +90,7 @@ const SA = style(A)((theme, {calories}) => ({
     ...
   }
 }))
+`
 
 
 ## more samples
