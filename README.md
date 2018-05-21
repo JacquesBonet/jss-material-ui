@@ -67,6 +67,13 @@ const STableCell = style(TableCell)((theme, {calories}) => ({
 
 Its also possible to use custom props
 
+```js
+style(TableCell, {
+     myCustomProps1,
+     myCustomProps2
+   })
+   ((theme, {calories})
+```
 
 ## Class inherithance
 
