@@ -42,7 +42,8 @@ const ContainerRoot = style(Paper)({
   }
 })
 
-<Container />
+// container use
+<ContainerRoot />
 ```
 
 The name of the style doesn't matter for the styled component. Its the position of the style in the set of styles which is important.
@@ -99,7 +100,7 @@ If a child B of a component A has for className :
 Its possible to write that:
 
 ```js
-const SA = style(A)((theme, {calories}) => ({
+const SA = style(A)((theme, props) => ({
   styleForA: {
     ...
   },
@@ -118,3 +119,5 @@ Check ./stories directory for complete sample files.
 
 New samples files will arrive soon.
 Keep in mind the styling system is compatible with material-ui styling
+
+New samples will come soon.
