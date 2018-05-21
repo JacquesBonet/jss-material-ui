@@ -96,7 +96,7 @@ If a child B of a component A has for className :
 Its possible to write that:
 
 ```js
-const SA = style(A)((theme, {calories}) => ({
+const SA = style(A)((theme, props) => ({
   current: {
     ...
   },
