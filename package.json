@@ -1,6 +1,6 @@
 {
   "name": "jss-material-ui",
-  "version": "0.5",
+  "version": "1.0.0-beta.1",
   "description": "A styled Material-UI.",
   "main": "lib/styled.js",
   "files": [
