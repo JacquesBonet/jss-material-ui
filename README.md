@@ -44,7 +44,7 @@ const Root = style(Paper)({
 
 // container use
 <Container />
-`
+```
 
 ## with props
 
@@ -61,7 +61,7 @@ const STableCell = style(TableCell)((theme, {calories}) => ({
 
 // use
 <STableCell calories={n.calories} numeric>{n.calories}</STableCell>
-`
+```
 
 ## Custom props
 
@@ -72,11 +72,11 @@ Its also possible to use custom props
 
 If a child B of a component A has for className :
 
-`
+```js
 <A>
    <B className={classes.classB} />
 </A>
-`
+```
 
 Its possible to write that:
 
@@ -89,7 +89,8 @@ const SA = style(A)((theme, {calories}) => ({
     ...
   }
 }))
-`
+```
+
 The style specified in the classB object will be applied to B class component.
 
 
