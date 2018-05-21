@@ -8,8 +8,8 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 
-const Root = style(Paper)({
-  current: {
+const ContainerRoot = style(Paper)({
+  containerRoot: {
     width: '100%',
     marginTop: 3,
     overflowX: 'auto'
@@ -17,20 +17,20 @@ const Root = style(Paper)({
 })
 
 const STableHead = style(TableHead)((theme, props) => ({
-  current: {
+  tableHead: {
     width: '100%'
   },
 }))
 
 const STableCell = style(TableCell)((theme, {calories}) => ({
-  current: {
+  tableCell: {
     fontWeight: calories > 300 ? 700 : undefined,
     backgroundColor: calories > 300 ? '#ff0000' : calories < 160 ? '#00FF00' : undefined
   }
 }))
 
 const STableHeadCell = style(TableCell)({
-  current: {
+  tableHeadCell: {
     fontWeight: 700
   }
 })
@@ -52,7 +52,7 @@ const data = [
 
 const SimpleTable = (props) => {
   return (
-    <Root>
+    <ContainerRoot>
       <Table>
         <STableHead>
           <TableRow>
@@ -79,7 +79,7 @@ const SimpleTable = (props) => {
           })}
         </TableBody>
       </Table>
-    </Root>
+    </ContainerRoot>
   )
 }
 

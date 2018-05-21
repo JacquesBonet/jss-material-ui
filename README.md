@@ -34,17 +34,23 @@ So I decided to develop a library with the folowing objective:
 import style from 'styled'
 
 // a container style
-const Root = style(Paper)({
-  current: {
+const ContainerRoot = style(Paper)({
+  containerRoot: {
     width: '100%',
     marginTop: 3,
     overflowX: 'auto'
   }
 })
 
-// container use
 <Container />
 ```
+
+The name of the style doesn't matter for the styled component. Its the position of the style in the set of styles which is important.
+
+The first style is for the styled component.
+
+The others styles will be for the child components (see later)
+
 
 ## with props
 
@@ -53,7 +59,7 @@ import style from 'styled'
 import TableCell from '@material-ui/core/TableCell'
 
 const STableCell = style(TableCell)((theme, {calories}) => ({
-  current: {
+  tableCell: {
     fontWeight: calories > 300 ? 700 : undefined,
     backgroundColor: calories > 300 ? '#ff0000' : calories < 160 ? '#00FF00' : undefined
   }
@@ -94,7 +100,7 @@ Its possible to write that:
 
 ```js
 const SA = style(A)((theme, {calories}) => ({
-  current: {
+  styleForA: {
     ...
   },
   classB: {

@@ -18,7 +18,7 @@ const StyledComponent = ({
                          }) => (
   <WrappedComponent
     classes={classes}
-    className={classNames(className, classes.current)}
+    className={classNames(className, classes[Object.keys(classes)[0]])}
     {...passThroughProps}
   />
 )
