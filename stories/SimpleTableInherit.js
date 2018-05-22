@@ -1,14 +1,18 @@
 import React from 'react';
 import style from '../src/styled';
 
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+const _ContainerRoot = (props) => {
+    const { children, ...rest } = props;
 
-const ContainerRoot = style(Paper)((theme, { calories }) => ({
+    return (
+        <div>
+            {children.map((elem, idx) => (React.cloneElement(elem, { key: idx, ...rest })))}
+        </div>
+    );
+};
+
+
+const ContainerRoot = style(_ContainerRoot)((theme, { backgroundColor, color }) => ({
     containerRoot: {
         width: '100%',
         marginTop:
@@ -16,68 +20,70 @@ const ContainerRoot = style(Paper)((theme, { calories }) => ({
         overflowX:
             'auto',
     },
-    tableHead: {
-        width: '100%',
-    }
-    ,
-    tableCell: {
-        fontWeight: calories > 300 ? 700 : undefined,
-        backgroundColor:
-            calories > 300 ? '#ff0000' : calories < 160 ? '#00FF00' : undefined,
-    }
-    ,
-    tableHeadCell: {
-        fontWeight: 700,
+    blue: {
+        backgroundColor: '#0000ff',
+    },
+
+    red: {
+        backgroundColor: '#ff0000',
+    },
+
+    color: {
+        backgroundColor,
+        color,
     },
 }));
 
 
-let id = 0;
+const ClassAA = (props) => {
+    const { children, ...rest } = props;
 
-function createData(name, calories, fat, carbs, protein) {
-    id += 1;
-    return { id, name, calories, fat, carbs, protein };
-}
+    return (
+        <div>
+            <p className={props.classes.blue}>Hello blue</p>
+            {React.cloneElement(children, { key: 1, ...rest })}
+        </div>
+    );
+};
 
-const data = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+const ClassA = (props) => (<p className={props.classes.color}>{props.value}</p>);
+
+
+const StyledBleuGrisClassA = style(ClassA)({
+    blue: {
+        backgroundColor: '#0000ff',
+        color: '#888888'
+    },
+});
+
+const StyledColorClassA = style(ClassA)((theme, { backgroundColor, color }) => ({
+    color: {
+        backgroundColor,
+        color,
+    },
+}));
 
 const SimpleTableInherit = (props) => {
     return (
-        <ContainerRoot>
-            <Table>
-                <TableHead className={'tableHead'}>
-                    <TableRow>
-                        <TableCell>Dessert (100g serving)</TableCell>
-                        <TableCell numeric>Calories</TableCell>
-                        <TableCell numeric>Fat (g)</TableCell>
-                        <TableCell numeric>Carbs (g)</TableCell>
-                        <TableCell numeric>Protein (g)</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {data.map(n => {
-                        return (
-                            <TableRow key={n.id}>
-                                <TableCell component='th' scope='row'>
-                                    {n.name}
-                                </TableCell>
-                                <TableCell className={'tableCell'} calories={n.calories}
-                                           numeric>{n.calories}</TableCell>
-                                <TableCell numeric>{n.fat}</TableCell>
-                                <TableCell numeric>{n.carbs}</TableCell>
-                                <TableCell numeric>{n.protein}</TableCell>
-                            </TableRow>
-                        );
-                    })}
-                </TableBody>
-            </Table>
-        </ContainerRoot>
+        <div>
+            <ContainerRoot color={'red'} backgroundColor={'green'}>
+                <ClassA value='red/green'/>
+                <ClassAA>
+                    <ClassA value='red/green'/>
+                </ClassAA>
+                <StyledBleuGrisClassA value='bleu/gris'/>
+                <StyledColorClassA color={'#ff0000'} backgroundColor={'#00ff00'} value='rouge/vert'/>
+            </ContainerRoot>
+            <ContainerRoot color={'blue'} backgroundColor={'#f000f0'}>
+                <ClassA value='bleu/violet'/>
+                <ClassAA>
+                    <ClassA value='bleu/violet'/>
+                </ClassAA>
+                <StyledBleuGrisClassA value='bleu/gris'/>
+                <StyledColorClassA color={'#ff0000'} backgroundColor={'#00ff00'} value='rouge/vert'/>
+            </ContainerRoot>
+        </div>
+
     );
 };
 

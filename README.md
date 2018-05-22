@@ -111,7 +111,8 @@ const SA = style(A)((theme, props) => ({
 ```
 
 The style specified in the classB object will be applied to B class component.
-
+Check storiesSimpleTableInherit.js
+You'll see there is priorisation problem.
 
 ## more samples
 

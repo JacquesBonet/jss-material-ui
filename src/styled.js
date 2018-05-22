@@ -12,11 +12,11 @@ const styles = (theme, props, style) => {
 
 class StyledComponent extends React.Component {
     render() {
-        const { classes, className = '', WrappedComponent, ...passThroughProps } = this.props;
+        const { className = '', WrappedComponent, ...passThroughProps } = this.props;
+        const { classes} = this.props;
 
         return (
             <WrappedComponent
-                classes={classes}
                 className={classNames(classes[Object.keys(classes)[0]], className)}
                 {...passThroughProps}
             />
@@ -36,15 +36,15 @@ const styled = (WrappedComponent, customProps = {}) => {
                 constructor(props) {
                     super(props);
                     this.FinalComponent =
-                        withStyles(theme => styles(theme, props, style), {
-                            ...options,
-                            withTheme: true,
-                        })(StyledComponent);
+                        withProps({...customProps, ...this.props, WrappedComponent})(withStyles(theme => styles(theme, props, style), {
+                        ...options,
+                        withTheme: true,
+                    })(StyledComponent));
                 }
 
                 render() {
                     return (
-                        <this.FinalComponent {...customProps} {...this.props} WrappedComponent={WrappedComponent}/>
+                        <this.FinalComponent />
                     );
                 }
             };
