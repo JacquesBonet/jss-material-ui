@@ -49,11 +49,18 @@ const ContainerRoot = style(Paper)({
 <ContainerRoot />
 ```
 
-The name of the style doesn't matter for the styled component. Its the position of the style in the set of styles which is important.
+The first style is always applied to the styled component, ```containerRoot``` on the sample.
+If you don't have style to pass to the component, you can write 
 
-The first style is for the styled component.
+```js
+containerRoot: {}
+```
+or 
+```js
+dummy: {}
+```
 
-The others styles will be for the child components (see later)
+You can pass styles to the subcomponents of the styled component. In that case you must pass ```classes``` props to the subcomponents.
 
 
 
@@ -115,9 +122,8 @@ const SA = style(A)((theme, props) => ({
 }))
 ```
 
-The style specified in the classB object will be applied to B class component.
-Check storiesSimpleTableInherit.js
-You'll see there is priorisation problem.
+The style specified in the ```classB``` object will be applied to B class component.
+Check ```stories/SimpleTableInherit.js```
 
 
 ## more samples
