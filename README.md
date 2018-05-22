@@ -1,5 +1,5 @@
 # jss-material-ui
-Provide seamless styled components to material-ui
+Provide seamless components styling to material-ui
 
 # Introduction
 Material-ui 1.0 is a great react library, but its css to jss styling could be enhanced.
