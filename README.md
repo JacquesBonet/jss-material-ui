@@ -4,19 +4,21 @@ Provide seamless components styling to material-ui
 # Introduction
 Material-ui 1.0 is a great react library, but its css to jss styling could be enhanced.
 
+
 # Drawback of the styling provided by material-ui
 
 * doesn't support props
-* Styles are applied globally resulting in a lot of warning for styling not appicable for the current context
-* No component oriented, we have to specify the className of the component to define its style 
+* Styles are applied globally resulting to a lot of warning for the styles not maching the processed component
+
 
 # The solutions until now to resolve these problems
-Some suggest to use styled libraries like styled-component, glamorous, emotion, ... o resove these problems
+Some suggest to use styled libraries like styled-component, glamorous, emotion, ... to resove these problems
 
 They resolve it, but two new problems arrive: 
 
 * stylesheet priorisation. 
 * two css engines on the system which provide more complexity for the app
+
 
 # A new small styled libray
 So I decided to develop a library with the folowing objective:
@@ -24,6 +26,7 @@ So I decided to develop a library with the folowing objective:
 * use material-ui styling system, so compatibiity is 100%
 * more component oriented
 * provide props
+
 
 # A little sample
 
@@ -51,6 +54,7 @@ The name of the style doesn't matter for the styled component. Its the position 
 The first style is for the styled component.
 
 The others styles will be for the child components (see later)
+
 
 
 ## with props
@@ -87,6 +91,7 @@ style(TableCell, {
    ((theme, {calories})
 ```
 
+
 ## Class inherithance
 
 If a child B of a component A has for className :
@@ -113,6 +118,7 @@ const SA = style(A)((theme, props) => ({
 The style specified in the classB object will be applied to B class component.
 Check storiesSimpleTableInherit.js
 You'll see there is priorisation problem.
+
 
 ## more samples
 
