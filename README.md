@@ -70,15 +70,15 @@ You can pass styles to the subcomponents of the styled component. In that case y
 import style from 'styled'
 import TableCell from '@material-ui/core/TableCell'
 
-const STableCell = style(TableCell)((theme, {calories}) => ({
-  tableCell: {
+const CaloriesCell = style(TableCell)((theme, {calories}) => ({
+  calories: {
     fontWeight: calories > 300 ? 700 : undefined,
     backgroundColor: calories > 300 ? '#ff0000' : calories < 160 ? '#00FF00' : undefined
   }
 }))
 
 // use
-<STableCell calories={n.calories} numeric>{n.calories}</STableCell>
+<CaloriesCell calories={n.calories} numeric>{n.calories}</CaloriesCell>
 ```
 
 ![Result](./stories/jss.png)
