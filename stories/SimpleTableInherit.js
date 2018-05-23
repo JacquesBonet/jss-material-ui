@@ -13,7 +13,7 @@ const _ContainerRoot = (props) => {
 
 
 const ContainerRoot = style(_ContainerRoot)((theme, { backgroundColor, color }) => ({
-    containerRoot: {
+    root: {
         width: '100%',
         marginTop:
             3,
@@ -46,22 +46,8 @@ const ClassAA = (props) => {
     );
 };
 
-const ClassA = (props) => (<p className={props.classes.color}>{props.value}</p>);
+const ClassA = ({classes, value}) => (<p className={classes.color}>{value}</p>);
 
-
-const StyledBleuGrisClassA = style(ClassA)({
-    blue: {
-        backgroundColor: '#0000ff',
-        color: '#888888'
-    },
-});
-
-const StyledColorClassA = style(ClassA)((theme, { backgroundColor, color }) => ({
-    color: {
-        backgroundColor,
-        color,
-    },
-}));
 
 const SimpleTableInherit = (props) => {
     return (
@@ -71,16 +57,12 @@ const SimpleTableInherit = (props) => {
                 <ClassAA>
                     <ClassA value='red/green'/>
                 </ClassAA>
-                <StyledBleuGrisClassA value='bleu/gris'/>
-                <StyledColorClassA color={'#ff0000'} backgroundColor={'#00ff00'} value='rouge/vert'/>
             </ContainerRoot>
             <ContainerRoot color={'blue'} backgroundColor={'#f000f0'}>
                 <ClassA value='bleu/violet'/>
                 <ClassAA>
                     <ClassA value='bleu/violet'/>
                 </ClassAA>
-                <StyledBleuGrisClassA value='bleu/gris'/>
-                <StyledColorClassA color={'#ff0000'} backgroundColor={'#00ff00'} value='rouge/vert'/>
             </ContainerRoot>
         </div>
 

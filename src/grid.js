@@ -4,19 +4,19 @@ import { Typography } from '@material-ui/core'
 const GridCore = (
   {
     border = false,
-    mBetween = false,
-    mCenter = false,
-    mStart = false,
-    sCenter = false,
-    sStart = false,
-    sStrech = false
+    mbetween = false,
+    mcenter = false,
+    mstart = false,
+    scenter = false,
+    sstart = false,
+    sstrech = false
   }
 ) => ({
-  alignItems: sCenter
+  alignItems: scenter
     ? 'center'
-    : sStart
+    : sstart
       ? 'flex-start'
-      : sStrech
+      : sstrech
         ? 'stretch'
         : 'center',
   border: border === true ? '1px solid #eee' : 'none',
@@ -24,11 +24,11 @@ const GridCore = (
   flex: 0,
   flexDirection: 'row',
   flexWrap: 'wrap',
-  justifyContent: mCenter
+  justifyContent: mcenter
     ? 'center'
-    : mStart
+    : mstart
       ? 'flex-start'
-      : mBetween
+      : mbetween
         ? 'space-between'
         : 'space-between',
   marginBottom: 10,
@@ -44,7 +44,7 @@ const GridCore = (
 export const HGrid = style('div')((theme, props) => GridCore(props))
 
 export const H100Grid = style('div')((theme, props) => ({
-  current: {
+  root: {
     ...GridCore(props),
     flex: 1,
     width: '100%'
@@ -52,14 +52,14 @@ export const H100Grid = style('div')((theme, props) => ({
 }))
 
 export const VGrid = style('div')((theme, props) => ({
-  current: {
+  root: {
     ...GridCore(props),
     flexDirection: 'column'
   }
 }))
 
 export const V100Grid = style('div')((theme, props) => ({
-  current: {
+  root: {
     ...GridCore(props),
     flexDirection: 'column',
     flex: 1,
@@ -71,7 +71,7 @@ const IGridCore = (
   theme,
   { border = false, center = false, flex = false, start = false, stretch = false }
 ) => ({
-  current: {
+  root: {
     alignSelf: center
       ? 'center'
       : start
@@ -97,7 +97,7 @@ const IGridCore = (
 export const IGrid = style('div')((theme, props) => IGridCore(theme, props))
 
 export const I100Grid = style('div')((theme, props) => ({
-  current: {
+  root: {
     ...IGridCore(theme, props),
     flex: 1,
     width: '100%'
@@ -105,7 +105,7 @@ export const I100Grid = style('div')((theme, props) => ({
 }))
 
 export const Divider = style('hr')({
-  current: {
+  root: {
     flex: 1,
     width: '100%',
     border: '1px solid #eee',
@@ -114,7 +114,7 @@ export const Divider = style('hr')({
 })
 
 export const Space = style('br')({
-  current: {
+  root: {
     border: 'none',
     flex: 1,
     width: '100%',
@@ -124,7 +124,7 @@ export const Space = style('br')({
 
 export const TitleForm = style(Typography)(
   (theme, { h1 = false, h2 = false, h3 = false }) => ({
-    current: {
+    root: {
       align: 'center',
       paragraph: true,
       variant: 'headline',
