@@ -34,7 +34,7 @@ So I decided to develop a library with the folowing objective:
 
 
 ```js
-import style from 'styled'
+import style from 'jss-material-ui'
 
 // a container style
 const ContainerRoot = style(Paper)({
@@ -53,15 +53,25 @@ The first style is always applied to the styled component, ```containerRoot``` o
 If you don't have style to pass to the component, you can write 
 
 ```js
-containerRoot: {}
+root: {}
 ```
-or 
+
+You can pass styles to subcomponents. In that case  ```classes``` props must be transmit to the subcomponents. material-ui do that for of of them: header of a table for example. else you'll have to do it.
+
 ```js
-dummy: {}
+import style from 'jss-material-ui'
+
+// a container style
+const STable = style(Table)((theme, props) => {
+  root: {},
+  theader: {
+    visibility: 'hidden',
+  },
+  tbody: {
+    height: props.height
+  }
+})
 ```
-
-You can pass styles to the subcomponents of the styled component. In that case you must pass ```classes``` props to the subcomponents.
-
 
 
 ## with props
