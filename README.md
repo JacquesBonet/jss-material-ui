@@ -1,22 +1,24 @@
 # jss-material-ui
-Provide seamless styled components to material-ui
+Provide seamless components styling to material-ui
 
 # Introduction
 Material-ui 1.0 is a great react library, but its css to jss styling could be enhanced.
 
+
 # Drawback of the styling provided by material-ui
 
 * doesn't support props
-* Styles are applied globally resulting in a lot of warning for styling not appicable for the current context
-* No component oriented, we have to specify the className of the component to define its style 
+* Styles are applied globally resulting to a lot of warning for the styles not maching the processed component
+
 
 # The solutions until now to resolve these problems
-Some suggest to use styled libraries like styled-component, glamorous, emotion, ... o resove these problems
+Some suggest to use styled libraries like styled-component, glamorous, emotion, ... to resove these problems
 
 They resolve it, but two new problems arrive: 
 
 * stylesheet priorisation. 
 * two css engines on the system which provide more complexity for the app
+
 
 # A new small styled libray
 So I decided to develop a library with the folowing objective:
@@ -25,13 +27,14 @@ So I decided to develop a library with the folowing objective:
 * more component oriented
 * provide props
 
+
 # A little sample
 
 ## without props
 
 
 ```js
-import style from 'styled'
+import style from 'jss-material-ui'
 
 // a container style
 const ContainerRoot = style(Paper)({
@@ -46,11 +49,29 @@ const ContainerRoot = style(Paper)({
 <ContainerRoot />
 ```
 
-The name of the style doesn't matter for the styled component. Its the position of the style in the set of styles which is important.
+The first style is always applied to the styled component, ```containerRoot``` on the sample.
+If you don't have style to pass to the component, you can write 
 
-The first style is for the styled component.
+```js
+root: {}
+```
 
-The others styles will be for the child components (see later)
+You can pass styles to subcomponents. In that case  ```classes``` props must be transmit to the subcomponents. material-ui do that for of of them: header of a table for example. else you'll have to do it.
+
+```js
+import style from 'jss-material-ui'
+
+// a container style
+const STable = style(Table)((theme, props) => {
+  root: {},
+  theader: {
+    visibility: 'hidden',
+  },
+  tbody: {
+    height: props.height
+  }
+})
+```
 
 
 ## with props
@@ -59,15 +80,15 @@ The others styles will be for the child components (see later)
 import style from 'styled'
 import TableCell from '@material-ui/core/TableCell'
 
-const STableCell = style(TableCell)((theme, {calories}) => ({
-  tableCell: {
+const CaloriesCell = style(TableCell)((theme, {calories}) => ({
+  calories: {
     fontWeight: calories > 300 ? 700 : undefined,
     backgroundColor: calories > 300 ? '#ff0000' : calories < 160 ? '#00FF00' : undefined
   }
 }))
 
 // use
-<STableCell calories={n.calories} numeric>{n.calories}</STableCell>
+<CaloriesCell calories={n.calories} numeric>{n.calories}</CaloriesCell>
 ```
 
 ![Result](./stories/jss.png)
@@ -86,6 +107,7 @@ style(TableCell, {
    })
    ((theme, {calories})
 ```
+
 
 ## Class inherithance
 
@@ -110,9 +132,9 @@ const SA = style(A)((theme, props) => ({
 }))
 ```
 
-The style specified in the classB object will be applied to B class component.
-Check storiesSimpleTableInherit.js
-You'll see there is priorisation problem.
+The style specified in the ```classB``` object will be applied to B class component.
+Check ```stories/SimpleTableInherit.js```
+
 
 ## more samples
 
