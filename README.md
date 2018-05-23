@@ -38,7 +38,7 @@ import style from 'jss-material-ui'
 
 // a container style
 const ContainerRoot = style(Paper)({
-  containerRoot: {
+  root: {
     width: '100%',
     marginTop: 3,
     overflowX: 'auto'
@@ -49,30 +49,14 @@ const ContainerRoot = style(Paper)({
 <ContainerRoot />
 ```
 
-The first style is always applied to the styled component, ```containerRoot``` on the sample.
+The first style is applied to the corresponding styled component.
+
+Its name is generally root. Permits to avoid material-ui warning message.
 If you don't have style to pass to the component, you can write 
 
 ```js
 root: {}
 ```
-
-You can pass styles to subcomponents. In that case  ```classes``` props must be transmit to the subcomponents. material-ui do that for of of them: header of a table for example. else you'll have to do it.
-
-```js
-import style from 'jss-material-ui'
-
-// a container style
-const STable = style(Table)((theme, props) => {
-  root: {},
-  theader: {
-    visibility: 'hidden',
-  },
-  tbody: {
-    height: props.height
-  }
-})
-```
-
 
 ## with props
 
@@ -81,7 +65,7 @@ import style from 'styled'
 import TableCell from '@material-ui/core/TableCell'
 
 const CaloriesCell = style(TableCell)((theme, {calories}) => ({
-  calories: {
+  root: {
     fontWeight: calories > 300 ? 700 : undefined,
     backgroundColor: calories > 300 ? '#ff0000' : calories < 160 ? '#00FF00' : undefined
   }
@@ -123,7 +107,7 @@ Its possible to write that:
 
 ```js
 const SA = style(A)((theme, props) => ({
-  styleForA: {
+  root: {
     ...
   },
   classB: {
@@ -138,9 +122,6 @@ Check ```stories/SimpleTableInherit.js```
 
 ## more samples
 
-Check ./stories directory for complete sample files.
+Check ./stories directory for complete samples files.
 
-New samples files will arrive soon.
-Keep in mind the styling system is compatible with material-ui styling
 
-New samples will come soon.
