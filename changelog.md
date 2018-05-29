@@ -1,5 +1,8 @@
 # Changelog
 
+** 1.1.1**
+Remove lock files for installation with latest release
+
 ** 1.1.0**
 Use root attribute for style description
 
