@@ -21,7 +21,7 @@ They resolve it, but two new problems arrive:
 
 
 # A new small styled libray
-So I decided to develop a library with the folowing objective:
+So I decided to develop a library with the following objective:
 
 * use material-ui styling system, so compatibiity is 100%
 * more component oriented
@@ -119,6 +119,12 @@ const SA = style(A)((theme, props) => ({
 The style specified in the ```classB``` object will be applied to B class component.
 Check ```stories/SimpleTableInherit.js```
 
+
+## ref
+
+To acces the DOM element of the component, use ```sref``` in place of ```ref```
+
+See the storybook Ref example
 
 ## more samples
 

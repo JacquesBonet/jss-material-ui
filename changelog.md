@@ -1,9 +1,12 @@
 # Changelog
 
-** 1.1.1**
+**1.2.0**
+sref for accessing dom element
+
+**1.1.1**
 Remove lock files for installation with latest release
 
-** 1.1.0**
+**1.1.0**
 Use root attribute for style description
 
 **1.0.8**

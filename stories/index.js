@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import SimpleTable from './SimpleTable';
 import SimpleTableInherit from './SimpleTableInherit';
 import SimpleGrid from './SimpleGrid';
+import Ref from './Ref';
 import MixedWithStylesSimpleTable from './MixedWithStylesSimpleTable';
 
 storiesOf('Styled Material UI', module)
@@ -17,4 +18,7 @@ storiesOf('Styled Material UI', module)
     )
     .add('SimpleTableInherit', () =>
         <SimpleTableInherit/>,
+    )
+    .add('Ref', () =>
+        <Ref/>,
     );
