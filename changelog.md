@@ -1,5 +1,8 @@
 # Changelog
 
+**1.2.1**
+storybook Ref modified
+
 **1.2.0**
 sref for accessing dom element
 

@@ -19,8 +19,8 @@ class Ref extends React.Component {
     }
     mapElement = React.createRef()
 
-    componentDidUpdate = () => {
-        this.setState({mapElement: JSON.stringify(this.mapElement.current.leafletElement)});
+    componentDidMount = () => {
+        this.setState({mapElement: this.mapElement.current.leafletElement !== null});
     };
 
     render() {
