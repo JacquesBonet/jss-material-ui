@@ -130,8 +130,4 @@ See the storybook Ref example
 
 Check ./stories directory for complete samples files.
 
-# Limitation
-
-Actually, the styled component doesn't support ref attribute.
-
 
