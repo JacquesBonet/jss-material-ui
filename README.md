@@ -16,7 +16,7 @@ Some suggest to use styled libraries like styled-component, glamorous, emotion, 
 
 They resolve it, but two new problems arrive: 
 
-* stylesheet priorisation. 
+* stylesheet priorisation problem. 
 * two css engines on the system which provide more complexity for the app
 
 
