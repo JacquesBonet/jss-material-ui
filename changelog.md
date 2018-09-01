@@ -1,5 +1,9 @@
 # Changelog
 
+**2.0.0**
+remove duplicated package in package.json
+bind with material-ui 3.x
+
 **1.2.1**
 storybook Ref modified
 

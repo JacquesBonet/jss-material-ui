@@ -1,5 +1,5 @@
 import React from 'react';
-import { H100Grid, IGrid, TitleForm, VGrid } from '../src/grid';
+import { HGrid, H100Grid, IGrid, TitleForm, VGrid, V100Grid } from '../src/grid';
 import TextField from '@material-ui/core/es/TextField/TextField';
 
 class SimpleGrid extends React.Component {
@@ -16,27 +16,47 @@ class SimpleGrid extends React.Component {
 
     render() {
         return (
-            <VGrid border mCenter>
+            <V100Grid border mCenter>
                 <TitleForm>
                     Hello
                 </TitleForm>
-                <H100Grid border mCenter>
-                    <IGrid>
-                        <H100Grid mCenter>
-                            <p>Hello2</p>
-                        </H100Grid>
-                    </IGrid>
-                    <IGrid>
-                        <TextField
-                            id="name"
-                            label="Name"
-                            value={this.state.name}
-                            onChange={this.handleChange}
-                            margin="normal"
-                        />
-                    </IGrid>
-                </H100Grid>
-            </VGrid>
+                <V100Grid border>
+                    <H100Grid border mCenter>
+                        <VGrid mCenter>
+                            <H100Grid mCenter>
+                                <p>Hello2</p>
+                            </H100Grid>
+                        </VGrid>
+                        <VGrid mCenter>
+                            <TextField
+                                id="name"
+                                label="Name"
+                                value={this.state.name}
+                                onChange={this.handleChange}
+                                margin="normal"
+                            />
+                        </VGrid>
+                    </H100Grid>
+                </V100Grid>
+                <V100Grid border>
+                    <HGrid border mCenter>
+                        <VGrid mCenter>
+                            <H100Grid mCenter>
+                                <p>Hello2</p>
+                            </H100Grid>
+                        </VGrid>
+                        <VGrid mCenter>
+                            <TextField
+                                id="name"
+                                label="Name"
+                                value={this.state.name}
+                                onChange={this.handleChange}
+                                margin="normal"
+                            />
+                        </VGrid>
+                    </HGrid>
+                </V100Grid>
+            </V100Grid>
         );
     }
 };

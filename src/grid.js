@@ -21,7 +21,7 @@ const GridCore = (
         : 'center',
   border: border === true ? '1px solid #eee' : 'none',
   display: 'flex',
-  flex: 0,
+  flex: '0 1 auto',
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: mcenter
@@ -41,7 +41,12 @@ const GridCore = (
   paddingTop: 10
 })
 
-export const HGrid = style('div')((theme, props) => GridCore(props))
+export const HGrid = style('div')((theme, props) => ({
+    root: {
+        ...GridCore(props),
+        flex: 1,
+    }
+}))
 
 export const H100Grid = style('div')((theme, props) => ({
   root: {
@@ -54,7 +59,8 @@ export const H100Grid = style('div')((theme, props) => ({
 export const VGrid = style('div')((theme, props) => ({
   root: {
     ...GridCore(props),
-    flexDirection: 'column'
+    flexDirection: 'column',
+    flex: 1,
   }
 }))
 

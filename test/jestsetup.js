@@ -1,3 +1,4 @@
+import * as TestUtils from 'react-dom/test-utils';
 import Enzyme from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 // React 16 Enzyme adapter
