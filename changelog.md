@@ -1,5 +1,8 @@
 # Changelog
 
+**2.0.3**
+package dependencies change
+
 **2.0.0**
 remove duplicated package in package.json
 bind with material-ui 3.x

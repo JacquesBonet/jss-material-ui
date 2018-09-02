@@ -1,6 +1,6 @@
 {
   "name": "jss-material-ui",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A styled Material-UI.",
   "main": "lib/styled.js",
   "files": [
@@ -36,8 +36,9 @@
     "url": "https://github.com/jacquesbonet/material-ui/issues-styled"
   },
   "homepage": "https://github.com/jacquesbonet/jss-material-ui#readme",
+  "dependencies": {
+  },
   "devDependencies": {
-    "@material-ui/core": "3.x",
     "@storybook/addon-actions": "^3.4.4",
     "@storybook/react": "^3.4.10",
     "babel-cli": "^6.14.0",
@@ -48,20 +49,23 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.11.1",
-    "classnames": "2.x",
     "coveralls": "^3.0.2",
     "enzyme": "^3.5.0",
     "enzyme-adapter-react-16": "^1.3.1",
     "enzyme-to-json": "^3.2.2",
     "gh-pages": "^1.0.0",
     "jest": "^23.5.0",
+    "react-test-renderer": "^16.4.2",
+    "release-it": "^7.6.0"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "3.x",
+    "classnames": "2.x",
     "leaflet": "1.x",
     "prop-types": "15.x",
     "react": "16.x",
     "react-dom": "16.x",
-    "react-leaflet": "1.x",
-    "react-test-renderer": "^16.4.2",
-    "release-it": "^7.6.0"
+    "react-leaflet": "1.x"
   },
   "jest": {
     "setupFiles": [
