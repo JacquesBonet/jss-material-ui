@@ -61,7 +61,7 @@ root: {}
 ## with props
 
 ```js
-import style from 'styled'
+import style from 'jss-material-ui'
 import TableCell from '@material-ui/core/TableCell'
 
 const CaloriesCell = style(TableCell)((theme, {calories}) => ({
