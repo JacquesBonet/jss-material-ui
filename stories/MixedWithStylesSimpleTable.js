@@ -7,7 +7,7 @@ import _TableCell from '@material-ui/core/TableCell'
 import _TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import _Paper from '@material-ui/core/Paper'
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@material-ui/core/styles/withStyles';
 
 
 export const styles = theme => ({
