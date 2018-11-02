@@ -1,6 +1,6 @@
 {
   "name": "jss-material-ui",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A styled Material-UI.",
   "main": "lib/styled.js",
   "files": [
@@ -38,8 +38,8 @@
   "homepage": "https://github.com/jacquesbonet/jss-material-ui#readme",
   "dependencies": {},
   "devDependencies": {
-    "@storybook/addon-actions": "^4.0.2",
-    "@storybook/react": "^4.0.2",
+    "@storybook/addon-actions": "^3.x",
+    "@storybook/react": "^3.x",
     "babel-cli": "6.x",
     "babel-core": "6.x",
     "babel-eslint": "^10.0.1",
@@ -48,16 +48,14 @@
     "babel-plugin-transform-object-rest-spread": "6.x",
     "babel-preset-env": "1.x",
     "babel-preset-react": "6.x",
+    "classnames": "2.x",
     "gh-pages": "^2.0.1",
     "leaflet": "1.x",
-    "react-leaflet": "1.x",
-    "release-it": "7.x"
-  },
-  "peerDependencies": {
     "@material-ui/core": "3.x",
-    "classnames": "2.x",
     "prop-types": "15.x",
     "react": "16.x",
-    "react-dom": "16.x"
+    "react-leaflet": "1.x",
+    "react-dom": "16.x",
+    "release-it": "7.x"
   }
 }

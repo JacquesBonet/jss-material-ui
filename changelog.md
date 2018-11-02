@@ -1,5 +1,8 @@
 # Changelog
 
+**2.0.5**
+correct dependencies problems on package.json
+
 **2.0.4**
 material-ui import optimization
 readme.md correction
