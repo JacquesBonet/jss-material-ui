@@ -6,7 +6,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 const styles = (theme, props, style) => {
     return typeof style === 'function'
         ? style(theme, props)
-        : style;
+        : style
 };
 
 class StyledComponent extends React.Component {
@@ -34,17 +34,17 @@ const styled = (WrappedComponent, customProps = {}) => {
         const HOCProps = WrappedComponent => {
             return class _HOCProps extends React.Component {
                 FinalComponent =
-                        withStyles(theme => styles(theme, this.props, style), options)(StyledComponent);
+                        withStyles(theme => styles(theme, this.props, style), options)(StyledComponent)
 
                 render() {
                     return (
                         <this.FinalComponent {...customProps} {...this.props} WrappedComponent={WrappedComponent}/>
-                    );
+                    )
                 }
             };
         };
-        return HOCProps(WrappedComponent);
+        return HOCProps(WrappedComponent)
     };
 };
 
-export default styled;
+export default styled
